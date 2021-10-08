@@ -1,0 +1,67 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 50%;
+  @include mq(sphone) {
+    font-size: 30%;
+  }
+  @include mq(tablet) {
+    font-size: 62.5%;
+  }
+  @include mq(tablet-wide) {
+    font-size: 75%;
+  }
+  @include mq(desktop-wide) {
+    font-size: 80%;
+  }
+  @include mq(fourK) {
+    font-size: 150%;
+  }
+}
+body {
+  font-family: "Montserrat", sans-serif;
+}
+p,
+label,
+button,
+input,
+select {
+  font-size: 1.5rem;
+}
+label {
+  font-family: "Lora", serif;
+}
+button {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+li {
+  list-style: none;
+  font-size: 1.6rem;
+}
+a {
+  text-decoration: none;
+}
+h1 {
+  font-size: 2.8rem;
+}
+h2 {
+  font-size: 2.4rem;
+}
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 1.8rem;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Raleway", sans-serif;
+}
