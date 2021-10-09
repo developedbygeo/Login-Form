@@ -1,0 +1,80 @@
+main {
+  height: 100vh;
+  background: url('../img/background.jpg');
+  background-size: cover;
+  background-position: center;
+  @include flex(center, center, row);
+}
+.art-section {
+  display: none;
+}
+
+.hero {
+  width: 90%;
+  height: auto;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 2rem;
+}
+form {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  @include grid(1fr, auto);
+  gap: 1rem;
+}
+.data-wrap {
+  width: 70%;
+  margin: auto;
+  // @include flex(center, center, column);
+  @include grid(1fr, auto);
+  gap: 0.5rem;
+  input,
+  select {
+    width: 80%;
+    padding-block: 0.5rem;
+    border-radius: 0.5rem;
+  }
+  input {
+    background: $cultured;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+  select {
+    background: $cultured;
+  }
+  label {
+    letter-spacing: 0.1rem;
+  }
+  input,
+  select,
+  label {
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+  }
+}
+.password,
+.password-confirm {
+  position: relative;
+}
+.show {
+  position: absolute;
+  top: 50%;
+  right: 3%;
+  z-index: 2;
+  svg {
+    pointer-events: none;
+  }
+}
