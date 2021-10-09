@@ -26,6 +26,9 @@
           <div class="data-wrap">
             <label for="country">Country</label>
             <select id="country" name="country">
+              <option value="default" disabled selected>
+                Select your Country
+              </option>
               <option value="Afganistan">Afghanistan</option>
               <option value="Albania">Albania</option>
               <option value="Algeria">Algeria</option>
@@ -297,12 +300,17 @@
           </div>
           <div class="data-wrap password-confirm">
             <label for="passwordConfirm">Re-type your password</label>
-            <input type="password" name="password" id="password" />
+            <input
+              type="password"
+              name="passwordConfirm"
+              id="passwordConfirm"
+            />
             <button class="show"><i class="far fa-eye-slash"></i></button>
           </div>
           <button type="submit">Create an account</button>
         </form>
       </section>
+      <section class="art-section"></section>
     </main>
   </body>
 </html>
