@@ -9,23 +9,37 @@
   </head>
   <body>
     <main>
+      <header class="logo"></header>
+      <div class="title"><h1 class="cta">Create an account</h1></div>
       <section class="hero">
-        <form action="#">
+        <form autocomplete="off" action="#">
           <div class="data-wrap">
             <label for="firstName">First Name</label>
-            <input type="text" name="firstName" id="firstName" />
+            <input
+              class="info"
+              type="text"
+              name="firstName"
+              id="firstName"
+              required
+            />
           </div>
           <div class="data-wrap">
             <label for="lastName">Last Name</label>
-            <input type="text" name="lastName" id="lastName" />
+            <input
+              class="info"
+              type="text"
+              name="lastName"
+              id="lastName"
+              required
+            />
           </div>
           <div class="data-wrap">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" />
+            <input class="info" type="email" name="email" id="email" required />
           </div>
           <div class="data-wrap">
             <label for="country">Country</label>
-            <select id="country" name="country">
+            <select class="info" id="country" name="country" required>
               <option value="default" disabled selected>
                 Select your Country
               </option>
@@ -291,23 +305,31 @@
           </div>
           <div class="data-wrap">
             <label for="zip">Zip Code</label>
-            <input type="number" name="zip" id="zip" />
+            <input class="info" type="number" name="zip" id="zip" required />
           </div>
           <div class="data-wrap password">
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" />
+            <input
+              class="info"
+              type="password"
+              name="password"
+              id="password"
+              required
+            />
             <button class="show"><i class="far fa-eye-slash"></i></button>
           </div>
           <div class="data-wrap password-confirm">
             <label for="passwordConfirm">Re-type your password</label>
             <input
+              class="info"
               type="password"
               name="passwordConfirm"
               id="passwordConfirm"
+              required
             />
             <button class="show"><i class="far fa-eye-slash"></i></button>
           </div>
-          <button type="submit">Create an account</button>
+          <button class="register" type="submit">Create an account</button>
         </form>
       </section>
       <section class="art-section"></section>
