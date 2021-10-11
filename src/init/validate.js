@@ -5,14 +5,15 @@ function getRegex(field) {
   const { regex } = regexObj[0];
   return regex;
 }
-
+function validatePassword() {
+  const originalPassword = document.querySelector('#password').value;
+  return `${originalPassword}`;
+}
+// TODO on form submission, bind this to the form itself
 function validate() {
   const state = this.validity;
-  console.log(state);
-  console.log(getRegex(this.name));
-
   if (state.valueMissing) {
-    this.setCustomValidity('Please fill-in this field.');
+    this.setCustomValidity('Please fill this field.');
   } else if (state.rangeUnderflow) {
     this.setCustomValidity('Invalid value (too low).');
   } else if (state.rangeOverflow) {
@@ -27,12 +28,13 @@ function validate() {
   const validity = this.checkValidity();
   if (validity) {
     const regularExpression = new RegExp(getRegex(this.name));
-    console.log(regularExpression);
     if (regularExpression.test(this.value) === false) {
       switch (this.name) {
         case 'firstName':
         case 'lastName':
-          this.setCustomValidity('Please provide a valid first name.');
+          this.setCustomValidity(
+            `Please provide a valid ${this.name.split('N')[0]} name.`
+          );
           this.reportValidity();
           break;
         case 'email':
@@ -46,7 +48,7 @@ function validate() {
           break;
         case 'password':
           this.setCustomValidity(
-            'Your password should contain 7-15 characters, including one numeric digit and a special character'
+            'Your password should contain 7-15 characters, including one numeric digit and a special character.'
           );
           this.reportValidity();
           break;
@@ -55,15 +57,31 @@ function validate() {
           break;
       }
     }
+    if (this.name === 'passwordConfirm') {
+      if (this.value !== validatePassword()) {
+        this.setCustomValidity(
+          'Please confirm your password, so it matches 100% the one previously provided.'
+        );
+        this.reportValidity();
+      }
+    }
   }
-}
-function validateSelect() {
-  if (this.value === 'Select your Country') {
-    this.setCustomValidity('Please select your country');
-  } else {
-    this.setCustomValidity('');
-  }
-  this.reportValidity();
+  return true;
 }
 
-export { validate, validateSelect };
+function validateSelect() {
+  const countrySelect = document.querySelector('#country');
+  const fieldValue = countrySelect.value;
+  if (fieldValue === 'default') {
+    countrySelect.setCustomValidity('Please select your country.');
+    countrySelect.reportValidity();
+  } else {
+    countrySelect.setCustomValidity('');
+  }
+}
+function preventSubmission(e) {
+  e.preventDefault();
+  this.reset();
+}
+
+export { validate, validateSelect, preventSubmission };
