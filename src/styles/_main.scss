@@ -10,7 +10,7 @@ main {
 }
 .logo {
   height: 10vh;
-  background: url('../img/logo.png') no-repeat center;
+  background: url('../img/logo.png') no-repeat left;
   background-size: 10rem;
 }
 .title {
@@ -67,6 +67,9 @@ form {
   input[type='number'] {
     -moz-appearance: textfield;
   }
+  input[type='text'] {
+    text-transform: capitalize;
+  }
   label {
     letter-spacing: 0.05rem;
     font-style: italic;
@@ -79,6 +82,9 @@ form {
     justify-self: center;
     width: 100%;
   }
+}
+.info:required:invalid:user-invalid:focus {
+  border-bottom: 1.5px solid $red-cta;
 }
 .password,
 .password-confirm {
