@@ -1,9 +1,12 @@
+@import 'keyframes';
+
 main {
   height: 100vh;
   background: url('../img/background.jpg') no-repeat center;
   background-size: cover;
   @include grid(1fr, 0.1fr 0.05fr 1fr);
   gap: 0.5rem;
+  position: relative;
 }
 .art-section {
   display: none;
@@ -117,4 +120,86 @@ form {
     background: $purp;
     color: $cultured;
   }
+}
+
+.register-success {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 150ms ease-in-out;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  border-radius: 1rem;
+  height: 70%;
+  width: 90%;
+  background: $cultured;
+  @include grid(1fr, 0.1fr 0.5fr auto 0.15fr);
+}
+.close {
+  padding: 1rem;
+  i {
+    pointer-events: none;
+  }
+}
+.register-success-active {
+  opacity: 1;
+  visibility: visible;
+}
+.success-header {
+  @include grid(1fr, auto);
+  h1,
+  h2 {
+    align-self: center;
+    justify-self: center;
+  }
+  .clr1 {
+    color: $purp;
+  }
+  .clr2 {
+    color: #cf0063;
+  }
+  .clr3 {
+    color: #bd47e7;
+  }
+  .clr4 {
+    color: #f15252;
+  }
+}
+.button-wrap {
+  @include flex(flex-end, center, row);
+  width: 95%;
+  margin: auto;
+}
+.success-anim {
+  width: 100%;
+  height: 100%;
+  @include flex(center, center, row);
+  svg {
+    width: 80%;
+    height: 80%;
+  }
+}
+.success-comm {
+  text-align: center;
+  letter-spacing: 0.1rem;
+  p {
+    font-size: 1.3rem;
+  }
+}
+#balloon-left {
+  animation: balloons-1 1.5s ease-in-out infinite alternate;
+}
+#balloon-right {
+  animation: balloons-2 2s ease-in-out infinite alternate;
+}
+#free-balloons {
+  animation: free-balloons 4s ease infinite alternate;
+}
+#stardust {
+  animation: stardust 2s linear infinite alternate-reverse;
+}
+#hands {
+  animation: hands 2s ease infinite alternate;
+  transform-origin: center;
 }
