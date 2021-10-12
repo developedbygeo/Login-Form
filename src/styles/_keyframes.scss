@@ -1,0 +1,43 @@
+@keyframes balloons-1 {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(5%);
+    transform: translateY(-10%);
+  }
+}
+@keyframes balloons-2 {
+  from {
+    transform: translate(0%, 0%);
+  }
+  to {
+    transform: translate(-2.5%, -5%);
+  }
+}
+@keyframes free-balloons {
+  from {
+    transform: translate(0%, 0%);
+  }
+  to {
+    transform: translate(1.5%, 5%);
+  }
+}
+@keyframes stardust {
+  from {
+    opacity: 0;
+    transform: translateY(0%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-10%);
+  }
+}
+@keyframes hands {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(2%);
+  }
+}
