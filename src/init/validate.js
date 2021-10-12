@@ -1,4 +1,5 @@
 import regexInfo from '../utils/regex.json';
+import { showDiv } from '../utils/showDiv';
 
 function getRegex(field) {
   const regexObj = regexInfo.filter((obj) => obj.id === field);
@@ -82,6 +83,7 @@ function validateSelect() {
 function preventSubmission(e) {
   e.preventDefault();
   this.reset();
+  showDiv('register-success', 'register-success-active');
 }
 
 export { validate, validateSelect, preventSubmission };
