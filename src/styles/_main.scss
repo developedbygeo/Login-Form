@@ -6,11 +6,11 @@ main {
   background-size: cover;
   @include grid(1fr, 0.1fr 0.05fr 1fr);
   gap: 0.5rem;
-  position: relative;
+  @include mq(tablet) {
+    background-position: right;
+  }
 }
-.art-section {
-  display: none;
-}
+
 .logo {
   height: 10vh;
   background: url('../img/logo.png') no-repeat left;
@@ -24,8 +24,41 @@ main {
   color: $cultured;
   margin-bottom: 1rem;
 }
+.sections-wrap {
+  @include flex(center, center, column);
+  @include mq(tablet) {
+    @include grid(0.7fr 1.3fr, auto);
+    position: relative;
+  }
+}
 
+.art-section {
+  width: 100%;
+  height: 100%;
+  grid-area: 1/1/1/1;
+  .image-wrap {
+    background: url('../img/abstract.png') center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    transform: rotate(0deg);
+  }
+  display: none;
+  @include mq(tablet) {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    width: 265%;
+    .image-wrap {
+      width: 170%;
+    }
+  }
+}
 .hero {
+  @include flex(center, center, column);
+  position: relative;
   width: 90%;
   height: auto;
   min-height: 80%;
@@ -37,6 +70,29 @@ main {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 2rem;
+  @include mq(phone) {
+    min-height: 65%;
+  }
+  @include mq(lgphone) {
+    min-height: 65%;
+  }
+  @include mq(tablet) {
+    grid-area: 1/2/1/2;
+    background: linear-gradient(
+      90deg,
+      rgb(137, 19, 133) 0%,
+      rgb(80, 39, 179) 100%
+    );
+    align-self: center;
+    opacity: 0.98;
+    position: absolute;
+    right: 50%;
+    top: 10%;
+    transform: translate(20%);
+    z-index: 3;
+    border: none;
+    box-shadow: 0 8px 32px 0 rgba(2, 2, 2, 0.5);
+  }
 }
 form {
   width: 90%;
@@ -44,6 +100,21 @@ form {
   margin: auto;
   @include grid(1fr, auto);
   gap: 0.7rem;
+  @include mq(sphone) {
+    gap: 0.05rem;
+  }
+  @include mq(lgphone) {
+    gap: 1.2rem;
+  }
+  @include mq(wphone) {
+    gap: 2rem;
+  }
+  @include mq(phone) {
+    gap: 1rem;
+  }
+  @include mq(mphone) {
+    gap: 1.7rem;
+  }
 }
 .data-wrap {
   width: 70%;
@@ -131,12 +202,11 @@ form {
   visibility: hidden;
   transition: all 150ms ease-in-out;
   position: absolute;
-  top: 50%;
-  right: 50%;
-  transform: translate(50%, -50%);
+  top: 0%;
+  right: 0%;
   border-radius: 1rem;
-  height: 70%;
-  width: 90%;
+  height: 100%;
+  width: 100%;
   background: $cultured;
   @include grid(1fr, 0.1fr 0.5fr auto 0.15fr);
 }
