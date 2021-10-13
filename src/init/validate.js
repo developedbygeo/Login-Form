@@ -1,5 +1,6 @@
 import regexInfo from '../utils/regex.json';
 import { showDiv } from '../utils/showDiv';
+import throwConfetti from '../utils/confetti';
 
 function getRegex(field) {
   const regexObj = regexInfo.filter((obj) => obj.id === field);
@@ -84,6 +85,7 @@ function preventSubmission(e) {
   e.preventDefault();
   this.reset();
   showDiv('register-success', 'register-success-active');
+  throwConfetti();
 }
 
 export { validate, validateSelect, preventSubmission };
