@@ -52,8 +52,23 @@ $breakpoints: (
       @content;
     }
   }
+  @if $breakpoint==mphone {
+    @media only screen and (min-width: 375px) {
+      @content;
+    }
+  }
+  @if $breakpoint==wphone {
+    @media only screen and (min-width: 360px) and (min-height: 760px) {
+      @content;
+    }
+  }
   @if $breakpoint==phone {
     @media only screen and (min-width: 400px) {
+      @content;
+    }
+  }
+  @if $breakpoint==lgphone {
+    @media only screen and (min-width: 380px) and (min-height: 830px) {
       @content;
     }
   }
