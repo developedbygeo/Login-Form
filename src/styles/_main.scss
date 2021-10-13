@@ -73,6 +73,10 @@ form {
   input[type='text'] {
     text-transform: capitalize;
   }
+  #password,
+  #passwordConfirm {
+    text-transform: none;
+  }
   label {
     letter-spacing: 0.05rem;
     font-style: italic;
