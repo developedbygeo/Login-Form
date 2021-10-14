@@ -1,5 +1,14 @@
 @import 'keyframes';
 
+body {
+  @include mq(desktop) {
+    overflow-y: hidden;
+  }
+  @include mq(tablet-landscape) {
+    overflow-y: hidden;
+  }
+}
+
 main {
   height: 100vh;
   background: url('../img/background.jpg') no-repeat center;
@@ -15,6 +24,14 @@ main {
   height: 10vh;
   background: url('../img/logo.png') no-repeat left;
   background-size: 10rem;
+  @include mq(desktop) {
+    width: 65%;
+    margin: auto;
+  }
+  @include mq(tablet-landscape) {
+    width: 65%;
+    margin: auto;
+  }
 }
 .title {
   @include flex(flex-start, center, row);
@@ -23,6 +40,12 @@ main {
   margin: auto;
   color: $cultured;
   margin-bottom: 1rem;
+  @include mq(tablet-landscape) {
+    width: 60%;
+  }
+  @include mq(desktop) {
+    width: 60%;
+  }
 }
 .sections-wrap {
   @include flex(center, center, column);
@@ -53,6 +76,18 @@ main {
     width: 265%;
     .image-wrap {
       width: 170%;
+    }
+  }
+  @include mq(desktop) {
+    width: 100%;
+    .image-wrap {
+      width: 65%;
+    }
+  }
+  @include mq(tablet-landscape) {
+    width: 100%;
+    .image-wrap {
+      width: 65%;
     }
   }
 }
@@ -115,6 +150,14 @@ form {
   @include mq(mphone) {
     gap: 1.7rem;
   }
+  @include mq(desktop) {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1.5rem;
+  }
+  @include mq(tablet-landscape) {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1.5rem;
+  }
 }
 .data-wrap {
   width: 70%;
@@ -168,6 +211,22 @@ form {
 .password-confirm {
   position: relative;
 }
+.password {
+  @include mq(desktop) {
+    grid-area: 3/1/4/1;
+  }
+  @include mq(tablet-landscape) {
+    grid-area: 3/1/4/1;
+  }
+}
+.register {
+  @include mq(desktop) {
+    width: 100%;
+  }
+  @include mq(tablet-landscape) {
+    width: 100%;
+  }
+}
 .show {
   position: absolute;
   top: 50%;
@@ -209,6 +268,12 @@ form {
   width: 100%;
   background: $cultured;
   @include grid(1fr, 0.1fr 0.5fr auto 0.15fr);
+  @include mq(tablet-landscape) {
+    grid-template-rows: 0.1fr 0.5fr minmax(10vh, 100%) 0.15fr;
+  }
+  @include mq(desktop) {
+    grid-template-rows: 0.1fr 0.5fr minmax(20vh, 100%) 0.15fr;
+  }
 }
 .close {
   padding: 1rem;
@@ -252,6 +317,16 @@ form {
   svg {
     width: 80%;
     height: 80%;
+  }
+  @include mq(tablet-landscape) {
+    height: 100%;
+  }
+  @include mq(desktop) {
+    height: 100%;
+    svg {
+      height: 100%;
+      width: 100%;
+    }
   }
 }
 .success-comm {
