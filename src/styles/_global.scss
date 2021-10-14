@@ -15,7 +15,7 @@ html {
     font-size: 78%;
   }
   @include mq(desktop-wide) {
-    font-size: 80%;
+    font-size: 90%;
   }
   @include mq(fourK) {
     font-size: 150%;
