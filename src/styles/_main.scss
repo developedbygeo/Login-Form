@@ -207,6 +207,9 @@ form {
 .info:required:invalid:user-invalid:focus {
   border-bottom: 1.5px solid $red-cta;
 }
+.info option {
+  color: black;
+}
 .password,
 .password-confirm {
   position: relative;
