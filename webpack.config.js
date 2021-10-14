@@ -9,6 +9,10 @@ module.exports = {
   entry: {
     main: './src/index.js',
   },
+  performance: {
+    maxEntrypointSize: 1536000,
+    maxAssetSize: 1536000,
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new CopyWebpackPlugin({
