@@ -97,6 +97,11 @@ $breakpoints: (
       @content;
     }
   }
+  @if $breakpoint==tablet-landscape {
+    @media only screen and (min-width: 768px) and (max-width: 1194px) and (orientation: landscape) {
+      @content;
+    }
+  }
   @if $breakpoint==desktop {
     @media only screen and (min-width: 1248px) {
       @content;
